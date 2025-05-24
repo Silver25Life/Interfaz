@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Noticias - The Art Of LMAD</title>
+
+    <!-- CSS -->
+
+    <script>
+      if (
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches
+      ) {
+        if (!localStorage.getItem("modo")) {
+          document.documentElement.classList.add("dark-mode");
+          localStorage.setItem("modo", "oscuro");
+        }
+      }
+    </script>
+    <script>
+      if (localStorage.getItem("modo") === "oscuro") {
+        document.documentElement.classList.add("dark-mode");
+      }
+    </script>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light px-4 py-2">
+      <a class="navbar-brand" href="index.html">The Art Of LMAD</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNavbar"
+        aria-controls="mainNavbar"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavbar">
+        <ul class="navbar-nav ms-auto d-flex flex-column flex-lg-row gap-2">
+          <li class="nav-item">
+            <a class="btn btn-outline-primary w-100" href="exhibiciones.html"
+              >Exhibiciones</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-primary w-100" href="noticias.html">Noticias</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-outline-primary w-100" href="estudiantes.html"
+              >Estudiantes</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="btn btn-outline-primary w-100"
+              href="https://www.fcfm.uanl.mx/"
+              >Facultad</a
+            >
+          </li>
+          <li class="nav-item">
+            <button id="modoToggle" class="btn btn-secondary w-100">
+              Modo Claro/Oscuro
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const currentPage = location.pathname.split("/").pop();
+        document.querySelectorAll(".navbar a").forEach((link) => {
+          if (link.getAttribute("href") === currentPage) {
+            link.classList.remove("btn-outline-primary");
+            link.classList.add("btn-primary");
+          } else {
+            link.classList.add("btn-outline-primary");
+          }
+        });
+      });
+    </script>
+
+    <!-- Contenido principal -->
+    <div class="container mt-4">
+      <div class="card mb-3 noti-rap">
+        <div class="card-body">
+          <h3>Últimas Noticias</h3>
+        </div>
+      </div>
+      <!-- Cada tarjeta ocupa todo el ancho y ajusta su altura al contenido -->
+      <div class="row g-4">
+        <!-- Noticia -->
+        <div class="col-12">
+          <div class="card">
+            <img src="img/not1.jpg" class="card-img-top" alt="Noticia 1" />
+            <div class="card-body">
+              <h5 class="card-title">Nueva Galería de Arte Abre Sus Puertas</h5>
+              <h6>Fecha: 23/05/2025</h6>
+              <div class="texto-grande">
+                El 17 de mayo se celebró en la explanada de la Facultad de Ciencias Físico Matemáticas de la Universidad Autónoma de Nuevo León, el XIII Concurso Estatal de Aparatos y Experimentos de Física con la participación de 37 proyectos, los cuales concursaron en tres categorías: Aparato Didáctico, Aparato Tecnológico y Experimentos de Física.
+                El concurso está dirigido a los alumnos de bachillerato, y en esta ocasión participaron las preparatorias 1, 5, 7, 9, 16, 17, 19, 20, 22 y 25 de la UANL, además de equipos de las preparatorias Tecmilenio, la UADEM y Cristóbal Colón. Cada equipo está integrado por al menos tres estudiantes y un asesor. 
+                Se presentaron experimentos variados, solo por mencionar algunos: sistemas autónomos de riego, generador de plasma para esterilizar material, sistemas de monitoreo de CO2, generadores de suspensión magnética, etc.
+                Los experimentos fueron evaluados por profesores de la Academia de Física de nuestra Facultad y en cada experimento se evalúan diferentes aspecto técnicos, resaltando sobre todo el rublo de originalidad y novedad del experimento. Fue un gusto recibir a todos los equipos participantes y además constatar que varios de los asesores de los equipos son exalumnos de la carrera de Física que ahora están laborando en el campo docente.
+                ¡Felicidades!
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noticia -->
+        <div class="col-12">
+          <div class="card">
+            <img src="img/not2.jpg" class="card-img-top" alt="Noticia 1" />
+            <div class="card-body">
+              <h5 class="card-title">
+                Tesis sobre inteligencia de fuentes abiertas fortalece la
+                ciberseguridad en México
+              </h5>
+              <h6>Fecha: 22/05/2025</h6>
+              <div class="texto-grande">
+                La Facultad de Ciencias Físico Matemáticas de la Universidad Autónoma de Nuevo León celebra el examen de grado de Ricardo García Reyes, quien presentó su trabajo titulado “MEXOSINT: Compilado de herramientas de inteligencia de fuentes abiertas aplicables en el contexto mexicano”, como parte del programa de la Maestría en Ingeniería en Seguridad de la Información (MISI) de la FCFM de la UANL. Dirigido por el Dr. Arturo Erick Torres Cavazos, este proyecto representa una valiosa contribución al campo de la Open Source Intelligence (OSINT), enfocándose en el análisis, selección y adaptación de herramientas aplicables a investigaciones digitales y de ciberinteligencia en el contexto nacional. A partir del estudio de marcos como OSINT Framework y Bellingcat, Ricardo desarrolló una guía especializada útil para investigaciones centradas en personas dentro del entorno mexicano. Este logro es una muestra del compromiso de la MISI y de la FCFM con la formación de profesionales altamente capacitados en áreas estratégicas como inteligencia de amenazas, análisis de datos abiertos y ciberinvestigación, elementos clave para fortalecer la seguridad tanto pública como privada.
+                El jurado de tesis estuvo integrado por: 
+                · Presidente: Dr. Arturo Erick Torres Cavazos 
+                · Sinodal: Mtro. Gerardo Ruiz 
+                · Sinodal: Mtro. José Carlos Rodríguez Reyna 
+                ¡Muchas felicidades, Ricardo!
+                Tu trabajo es un aporte significativo a la comunidad nacional de ciberseguridad y un ejemplo del impacto de la investigación aplicada en nuestra Facultad.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noticia -->
+        <div class="col-12">
+          <div class="card">
+            <img src="img/not3.jpg" class="card-img-top" alt="Noticia 1" />
+            <div class="card-body">
+              <h5 class="card-title">Semana Cultural FCFM Mayo 2025</h5>
+              <h6>Fecha: 21/05/2025</h6>
+              <div class="texto-grande">
+                El 3 de mayo en las instalaciones de la Facultad de Ciencias Físico Matemáticas de la Universidad Autónoma de Nuevo León, se llevó a cabo la inauguración de la Semana Cultural FCFM en su edición 2025. Ante un público entusiasta, el Dr. Atilano Martínez Huerta, director de la FCFM, junto al Dr. José Apolinar Loyola Rodríguez, subdirector administrativo de la misma y demás autoridades de la Facultad, ofreció un cálido mensaje de bienvenida a los asistentes y participantes para después dar paso a la primera de las actividades preparadas para este evento, la cual consistió en pintar el mural alusivo a la Semana Cultural. En su breve intervención, el Dr. Martínez Huerta subrayó cómo este tipo de eventos enriquece la formación integral de los estudiantes, complementando su desarrollo académico con experiencias artísticas y culturales. Así, con palabras cargadas de ánimo, inició este evento de cuatro días dedicados al encuentro creativo y al intercambio cultural en nuestra comunidad universitaria.
+                Durante la semana, los organizadores del evento, liderados por el coordinador de Actividades Culturales de la FCFM, Lic. Jhosban Alberto Machorro Mayor, transformaron cada jornada en una oportunidad para explorar y disfrutar distintas propuestas.
+                En primer lugar, la Federación Universitaria Nutre invitó a todos los presentes a decorar macetas, compartiendo técnicas de pintura y fomentando el trabajo colaborativo, antes de sorprender con la paradanza deportiva por el equipo ParaDance Sin Límites, quienes montaron una coreografía que integró el ritmo del movimiento con fines de concientización.
+                La Federación Universitaria Funart, por su parte, llevó a cabo un taller de pintura de totebags donde los estudiantes plasmaron diseños personales y mensajes propios, dando vida a bolsas que combinaron arte gráfico y uso sustentable. De igual manera, se llevó a cabo la conferencia de la risa, una sesión para liberar tensiones y estrechar lazos entre los participantes, todo ello con el fin de dar a conocer las diversas actividades que realiza la Federación Alégrate.
+                En contraste, la Federación Animalia propuso sesiones de puppy yoga en las que pequeños cachorros circularon entre los asistentes, creando un espacio de calma y ternura: un respiro para la rutina académica. Los amantes de la palabra y su buen uso encontraron su lugar en la actividad “Escribir en un suspiro”, organizado por Tinta y Papel, donde versos breves y creativos surgieron al compás de la inspiración colectiva.
+                Simultáneamente, el Club Cultural de Animación invitó a perfilar personajes desde el boceto hasta sus expresiones finales, mostrando la magia detrás de la creación animada. La música también tuvo su espacio en el evento: la Tuna FCFM ofreció piezas divertidas y elocuentes características del grupo, mientras que el Ensamble Musical deleitó con un setlist de música pop y rock.
+                Por su parte, el Club de Doblaje Multivox abrió el escenario para el karaoke, mientras Bisonbeat, el grupo de K-Pop dance cover encendió la pista con sus coreografías. Previo al cierre de la semana, la Sociedad de Estudiantes organizó un torneo de Rubik, donde se midió la destreza mental de los participantes. Además, se invitó a participar al grupo Distraidoz, quienes cerraron con música norteña esta edición 2025 de la Semana Cultural FCFM.
+                Estas actividades, diversas en formato y estilo, se entrelazaron para ofrecer una Semana Cultural plural, donde ciencia, arte y comunidad se dieron la mano.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noticia -->
+        <div class="col-12">
+          <div class="card">
+            <img src="img/not4.jpg" class="card-img-top" alt="Noticia 1" />
+            <div class="card-body">
+              <h5 class="card-title">
+                Nombran a la Dra. Nora Elizondo miembro de la Academia de
+                Ingeniería de México
+              </h5>
+              <h6>Fecha: 19/05/2025</h6>
+              <div class="texto-grande">
+                El 9 de mayo de 2025 en la Ciudad de México, la Dra. Nora Elizondo Villarreal, profesora e investigadora de la Facultad de Ciencias Físico Matemáticas (FCFM) de la Universidad Autónoma de Nuevo León (UANL), fue designada Miembro Titular de la Academia de Ingeniería de México (AIM) durante una ceremonia protocolaria llevada a cabo en el Palacio de Minería de la Ciudad de México. Este reconocimiento, otorgado por una de las instituciones científicas y tecnológicas más prestigiosas del país, destaca el impacto nacional de sus contribuciones en ingeniería, así como el rol de la UANL en innovación y formación de talento. El nombramiento impulsará colaboraciones entre la comunidad científica, la industria y el sector educativo, beneficiando a estudiantes y egresados con mayores oportunidades académicas y laborales. La Dra. Elizondo, especialista en Nanobioingeniería, resaltó que su trabajo se centra en soluciones científicas a problemas tecnológicos, posicionándose como referente a nivel nacional. “Agradezco a la AIM por visibilizar campos emergentes como la Nanobioingeniería, que integra múltiples disciplinas para abordar desafíos urgentes en salud, medio ambiente y energía. Este logro refleja el esfuerzo colectivo de colegas, estudiantes y equipos de investigación. Reafirmo mi compromiso por fortalecer los vínculos entre ciencia, ingeniería y sociedad”, expresó. La FCFM celebra este logro, que como institución consolida su trayectoria como semillero de talento científico y tecnológico con impacto transformador en México. ¡Enhorabuena Dra. Nora Elizondo Villarreal! </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Noticia -->
+        <div class="col-12">
+          <div class="card">
+            <img src="img/not5.jpg" class="card-img-top" alt="Noticia 1" />
+            <div class="card-body">
+              <h5 class="card-title">
+                Bisontes logra el 1-2 en torneo de ajedrez intrauniversitario
+              </h5>
+              <h6>Fecha: 16/05/2025</h6>
+              <div class="texto-grande">
+                El equipo representativo de ajedrez, categoría novatos varonil, de los Bisontes de la Facultad de Ciencias Físico Matemáticas de la Universidad Autónoma de Nuevo León, logran coronarse como bicampeones en el torneo intrauniverstario del deporte ciencia. Además, el equipo de la categoría avanzados varonil sube una posición en la clasificación y se adjudica el subcampeonato de la rama. Con esto, la Facultad de Ciencias Físico Matemáticas se consolida como uno de los rivales a vencer en cada torneo. Los estudiantes que conforman los equipos que enaltecen el nombre de la FCFM, son, del equipo campeón, categoría novatos: Héctor Dávila Rodríguez, Bryan Alejandro Martínez García y Santiago Gerardo González Olivares de la Licenciatura en Actuaría; Aarón Dimas Garza y Francisco Blanco Morales de la Licenciatura en Ciencias Computacionales; Jonathan Valenzuela Valencia de la Licenciatura en Física; Pedro Guzmán Alcántara de la Licenciatura en Matemáticas y Javier Eduardo Ramos Chiney de la Licenciatura en Multimedia y Animación Digital. Y del equipo subcampeón, categoría avanzados, lo integran: Paul Josué Flores Irurso, Rogelio Sandoval Narváez y Alan Rodríguez Aguilar de la Licenciatura en Física; Alan Uriel Fernández Sánchez de la Licenciatura en Matemáticas; Fernando Adolfo Cancino Cuenca de la Licenciatura en Multimedia y Animación Digital y Hernaldo Castañeda Alfaro de la Licenciatura en Seguridad en Tecnologías de Información. ¡Felicidades y que sigan los éxitos! </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS y script personal -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <div
+      class="position-fixed bottom-0 end-0 m-3 p-2 bg-light border rounded dashboard-shadow"
+      style="z-index: 1000"
+    >
+      Página actual: <strong><span id="currentPage"></span></strong>
+    </div>
+    <script>
+      document.getElementById("currentPage").textContent = document.title;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>The Art Of LMAD</title>
+<!-- Bootstrap CSS -->
+<script>
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    if (!localStorage.getItem('modo')) {
+      document.documentElement.classList.add('dark-mode');
+      localStorage.setItem('modo', 'oscuro');
+    }
+  }
+</script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/styles.css" rel="stylesheet"/>
+</head>
+<body>
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light px-4 py-2">
+<a class="navbar-brand" href="index.html">The Art Of LMAD</a>
+<button aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#mainNavbar" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="mainNavbar">
+<ul class="navbar-nav ms-auto d-flex flex-column flex-lg-row gap-2">
+<li class="nav-item">
+<a class="btn btn-outline-primary w-100" href="exhibiciones.html">Exhibiciones</a>
+</li>
+<li class="nav-item">
+<a class="btn btn-outline-primary w-100" href="noticias.html">Noticias</a>
+</li>
+<li class="nav-item">
+<a class="btn btn-outline-primary w-100" href="estudiantes.html">Estudiantes</a>
+</li>
+<li class="nav-item">
+<a class="btn btn-outline-primary w-100" href="https://www.fcfm.uanl.mx/">Facultad</a>
+</li>
+<li class="nav-item">
+<button class="btn btn-secondary w-100" id="modoToggle" onclick="toggleMode()">Modo Claro/Oscuro</button>
+</li>
+</ul>
+</div>
+</nav>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const currentPage = location.pathname.split("/").pop();
+    document.querySelectorAll(".navbar a").forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.remove("btn-outline-primary");
+        link.classList.add("btn-primary");
+      } else {
+        link.classList.add("btn-outline-primary");
+      }
+    });
+  });
+</script>
+<!-- Contenido principal -->
+<div class="container-fluid mt-4">
+<div class="row d-flex" style="height: 80vh;">
+<!-- Columna izquierda: tarjetas con texto -->
+<div class="col-12 col-md-6 mb-4 overflow-auto pe-3">
+<div class="card mb-3 noti-rap"><div class="card-body"><h3>Próximos Eventos</h3></div></div><div class="card mb-3"><div class="card-body"><h5 class="card-title">Exhibición de los monarcas</h5><p class="card-text">En conmemoración a Homero Gómez González y su ayuda a la protección de las mariposas monarcas.</p></div></div><div class="card mb-3"><div class="card-body"><h5 class="card-title">Entre la luz y la oscuridad</h5><p class="card-text">Celebración temática del universo de Star Wars: 'May the force be with you'.</p></div></div><div class="card mb-3"><div class="card-body"><h5 class="card-title">El futuro de nuestros hogares</h5><p class="card-text">Modelos modernos de vivienda diseñados por alumnos.</p></div></div><div class="card mb-3"><div class="card-body"><h5 class="card-title">Nuestras caricaturas, nuestros corazones</h5><p class="card-text">Animaciones realizadas con pasión por los estudiantes.</p></div></div><div class="card mb-3"><div class="card-body"><h5 class="card-title">¿2D o 3D?</h5><p class="card-text">Comparativa de técnicas y esfuerzos entre ambos estilos.</p></div></div><div class="card mb-3"><div class="card-body"><h5 class="card-title">¡No siempre el realismo es increíble!</h5><p class="card-text">El estilo también puede ser tan impresionante como el realismo.</p></div></div><div class="card mb-3">
+<div class="card-body">
+<p class="card-text">La Facultad de Ciencias Fisico Matematicas tiene una de las licenciaturas dirigidas al
+              arte tanto 2D como 3D, la Licenciatura en Multimedia y Animacion Digital, abreviada LMAD. Esta pagina
+              muestra los trabajos de los futuros licenciados en la carrera.
+              textual aquí.</p>
+</div>
+</div>
+<div class="card mb-3 noti-rap">
+<div class="card-body">
+<h3>Noticias Rapidas</h3>
+</div>
+</div>
+<!-- Noticia -->
+<div class="card mb-3">
+<div class="card-body">
+<h4 class="card-title">
+              XIII Concurso Estatal de Aparatos y Experimentos de Física
+            </h4>
+<h5 class="card-title">
+              23/05/2025
+            </h5>
+<p class="card-text">
+              El 17 de mayo se celebró en la explanada de la Facultad de Ciencias Físico Matemáticas de la
+              Universidad
+              Autónoma de Nuevo...
+            </p>
+</div>
+</div>
+<!-- Noticia -->
+<div class="card mb-3">
+<div class="card-body">
+<h4 class="card-title">
+              Tesis sobre inteligencia de fuentes abiertas fortalece la ciberseguridad en México
+            </h4>
+<h5 class="card-title">
+              22/05/2025
+            </h5>
+<p class="card-text">
+              La Facultad de Ciencias Físico Matemáticas de la Universidad Autónoma de Nuevo León celebra el examen de
+              grado de Ricardo...
+            </p>
+</div>
+</div>
+<!-- Noticia -->
+<div class="card mb-3">
+<div class="card-body">
+<h4 class="card-title">
+              Semana Cultural FCFM Mayo 2025
+            </h4>
+<h5 class="card-title">
+              21/05/2025
+            </h5>
+<p class="card-text">
+              El 3 de mayo en las instalaciones de la Facultad de Ciencias Físico Matemáticas de la Universidad Autónoma
+              de Nuevo León,...
+            </p>
+</div>
+</div>
+<!-- Noticia -->
+<div class="card mb-3">
+<div class="card-body">
+<h4 class="card-title">
+              Nombran a la Dra. Nora Elizondo miembro de la Academia de Ingeniería de México
+            </h4>
+<h5 class="card-title">
+              19/05/2025
+            </h5>
+<p class="card-text">
+              El 9 de mayo de 2025 en la Ciudad de México, la Dra. Nora Elizondo Villarreal, profesora e investigadora
+              de la Facultad de Ciencias Físi...
+            </p>
+</div>
+</div>
+<!-- Noticia -->
+<div class="card mb-3">
+<div class="card-body">
+<h4 class="card-title">
+              Bisontes logra el 1-2 en torneo de ajedrez intrauniversitario
+            </h4>
+<h5 class="card-title">
+              16/05/2025
+            </h5>
+<p class="card-text">
+              El equipo representativo de ajedrez, categoría novatos varonil, de los Bisontes de la Facultad de Ciencias
+              Físico Matemáticas de...
+            </p>
+</div>
+</div>
+</div>
+<!-- Columna derecha: tarjetas con imagen -->
+<div class="col-12 col-md-6 mb-4 overflow-auto ps-3 border-start">
+<h4>Artistas Reconocidos</h4>
+<!-- Artista -->
+<div class="card mb-3">
+<img alt="El hombre triste" class="card-img-top" src="img/Liz.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Hecho por: Martha Lizbeth Hérnandez Hérnandez</h5>
+<p class="card-text">Matrícula: 1847862</p>
+</div>
+</div>
+<!-- Artista -->
+<div class="card mb-3">
+<img alt="Mas rápido, mas vector" class="card-img-top" src="img/AndreiyCarlos.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Hecho por: Carlos Andreiy Medrano García</h5>
+<p class="card-text">Matrícula: 1955608</p>
+</div>
+</div>
+<!-- Artista -->
+<div class="card mb-3">
+<img alt="Chad" class="card-img-top" src="img/Andrea.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Hecho por: Andrea Carrera Zamora</h5>
+<p class="card-text">Matrícula: 2026779</p>
+</div>
+</div>
+<!-- Artista -->
+<div class="card mb-3">
+<img alt="UTT" class="card-img-top" src="img/Alberto.jpg"/>
+<div class="card-body">
+<h5 class="card-title">Hecho por: Alberto Jesús Alvarado Garza</h5>
+<p class="card-text">Matrícula: 1847862</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bootstrap JS + Script personal -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<div class="position-fixed bottom-0 end-0 m-3 p-2 bg-light border rounded dashboard-shadow" style="z-index: 1000;">
+  Página actual: <strong><span id="currentPage"></span></strong>
+</div>
+<script>
+  document.getElementById('currentPage').textContent = document.title;
+</script>
+</body>
+</html>
